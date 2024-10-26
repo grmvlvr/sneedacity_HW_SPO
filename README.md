@@ -1,32 +1,25 @@
 ![Sneedacity](https://i.ibb.co/ZcCxtsB/sneeddabphones.gif)
-<p align="center">
-<!--<a href="https://github.com/Sneeds-Feed-and-Seed/sneedacity/releases" alt="GitHub release"><img src="https://img.shields.io/github/release/Sneeds-feed-and-Seed/sneedacity.svg"></a>-->
-<a href="https://github.com/Sneeds-Feed-and-Seed/sneedacity/actions" alt="Build Status"><img src="https://github.com/Sneeds-Feed-and-Seed/sneedacity/actions/workflows/cmake_build.yml/badge.svg?branch=master&event=push"></a>
-<a href="https://web.libera.chat/#sneedacity" alt="Libera.chat channel"><img src="https://img.shields.io/badge/libera.chat-%23sneedacity-brightgreen.svg"></a>
-<a href="xmpp:sneedacity@rooms.swurl.xyz" alt="XMPP room"><img src="https://img.shields.io/badge/xmpp-sneedacity%40rooms.swurl.xyz-brightgreen.svg"></a>
-<a href="https://matrix.to/#/#sneedacitydev:poa.st" alt="Matrix room"><img src="https://img.shields.io/badge/matrix-%23sneedacitydev:poa.st-brightgreen.svg"></a>
-</p>
 
 ---
 
-**Sneedacity** (formerly Audacity) is an easy-to-use, multi-track audio editor and recorder for Windows, Mac OS X, GNU/Linux and other operating systems. Sneedacity aims to provide a telemetry-free experience while otherwise being up-to-date with Audacity's original codebase, with minor improvements being added as (s)needed by contributors and volunteers like you at large. Sneedacity is [free software](https://www.gnu.org/philosophy/free-sw.html) licensed under GPL, version 2.
+**Sneedacity** (ранее Audacity) - это простой в использовании многодорожечный аудиоредактор и рекордер для Windows, Mac OS X, GNU/Linux и других операционных систем. Sneedacity стремится обеспечить работу без телеметрии, в остальном поддерживая оригинальную кодовую базу Audacity, с небольшими улучшениями, добавляемыми по мере необходимости соавторами и добровольцами вроде вас. Sneedacity - это [свободное программное обеспечение](https://www.gnu.org/philosophy/free-sw.html), лицензированное по GPL, версия 2.
 
-- **Recording** from any real, or virtual audio device that is available to the host system.
-- **Export / Import** a wide range of audio formats, extendible with FFmpeg.
-- **High quality** using 32-bit float audio processing.
-- **Plug-ins** Support for multiple audio plug-in formats, including VST, LV2, AU.
-- **Macros** for chaining commands and batch processing.
-- **Scripting** in Python, Perl, or any language that supports named pipes.
-- **Nyquist** Very powerful built-in scripting language that may also be used to create plug-ins.
-- **Editing** multi-track editing with sample accuracy and arbitrary sample rates.
-- **Accessibility** for VI users.
-- **Analysis and visualization** tools to analyze audio, or other signal data.
+- **Запись** с любого реального или виртуального аудиоустройства, доступного хост-системе.
+- **Экспорт/импорт** широкого спектра аудиоформатов, расширяемых с помощью FFmpeg.
+- **Высокое качество** с использованием 32-битной плавающей обработки звука.
+- **Плагины** Поддержка множества форматов аудиоплагинов, включая VST, LV2, AU.
+- **Макросы** для создания цепочек команд и пакетной обработки.
+- **Скриптинг** на Python, Perl или любом другом языке, поддерживающем именованные каналы.
+- **Nyquist** Очень мощный встроенный язык сценариев, который также может быть использован для создания плагинов.
+- **Редактирование** Многодорожечное редактирование с точностью до сэмпла и произвольной частотой дискретизации.
+- **Доступность** для пользователей VI.
+- **Анализ и визуализация** Инструменты для анализа аудио или других данных сигнала.
 
-## Pre-built binaries
+## Предварительно собранные двоичные файлы
 
-Binaries for the latest known to work build of Sneedacity are available [here](https://github.com/Sneeds-Feed-and-Seed/sneedacity/releases/tag/Sneedacity) and from the [sneed arch repos](https://github.com/Sneeds-Feed-and-Seed/sneed-arch-repo).
+Бинарные файлы для последней известной рабочей сборки Sneedacity доступны [здесь](https://github.com/Sneeds-Feed-and-Seed/sneedacity/releases/tag/Sneedacity) и из репозитория [sneed arch repos](https://github.com/Sneeds-Feed-and-Seed/sneed-arch-repo).
 
-## Mirrors
+## Зеркала
 
 - https://gitlab.com/sneeds-feed-and-seed/sneedacity
 - https://codeberg.org/Sneeds-Feed-and-Seed/sneedacity
@@ -36,10 +29,10 @@ Binaries for the latest known to work build of Sneedacity are available [here](h
 - http://sneedgitsupjk2qnbnlf5363zpciewzvvwu25lun7xzibyxielbdksad.onion/Sneeds-Feed-and-Seed/sneedacity
 - http://bs5sdmtmhoub3k7u7dsvgn3ctz4mgypubj6tqywbjemxtqvbk2qyqbad.onion/Sneeds-Feed-and-Seed/sneedacity
 
-## Getting Started
+## Начало работы
 
-Build instructions are available [here](BUILDING.md).
+Инструкции по сборке доступны [здесь](BUILDING.md).
 
-## License
+## Лицензия
 
-This project is licensed under the GNU General Public License v2 (PRAISE BE TO THE LIVING SAINT IGNUCIUS) and compatible licenses. More info in [LICENSE.txt](https://github.com/Sneeds-Feed-and-Seed/sneedacity/blob/master/LICENSE.txt)
+Этот проект лицензирован под GNU General Public License v2 (PRAISE BE TO THE LIVING SAINT IGNUCIUS) и совместимыми лицензиями. Дополнительная информация в [LICENSE.txt](https://github.com/Sneeds-Feed-and-Seed/sneedacity/blob/master/LICENSE.txt)
