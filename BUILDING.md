@@ -1,34 +1,34 @@
-# Building Sneedacity
+# Сборка Sneedacity
 
-## Prerequisites
+## Требования
 
 * **python3** >= 3.5
 * **cmake** >= 3.16
-* A working C++17 compiler
+* Работающий компилятор C++17
 
 ### CMake
 
-On Windows, please use the [prebuilt binaries](https://cmake.org/download/).
+На Windows, пожалуйста, используйте [готовые бинарные файлы](https://cmake.org/download/).
 
-On macOS, the easiest way to install CMake is `brew install cmake`.
+На macOS, самый лёгкий способ установить CMake - это команда `brew install cmake`.
 
-On Linux, `cmake` is usually available from the system package manager.
+На Linux, `cmake` обычно доступен из системного пактеного менеджера.
 
 ### Windows
 
-We build Sneedacity using [Microsoft Visual Studio 2019](https://visualstudio.microsoft.com/vs/community/). In order to build Sneedacity **Desktop development with C++** workload is required.
+Мы собираем Sneedacity, используя [Microsoft Visual Studio 2019](https://visualstudio.microsoft.com/vs/community/). Для сборки Sneedacity необходимо выбрать предустановку **Desktop development with C++**.
 
-As we require only C++14 - MSVC 2017 should work just fine too.
+Хотя мы запрашиваем только C++17 - MSVC 2017 тоже подходит.
 
 ### MacOS
 
-We build Sneedacity using XCode 12. However, it is likely possible to build it with XCode 7.
+Мы собираем Sneedacity, используя XCode 12. Однако, это также возможно с XCode 7.
 
 ### Linux
 
-We use GCC 9, but any C++14 compliant compiler should work.
+Мы используем GCC 9, но любой совместимый с C++17 компилятор должен подойти.
 
-On Debian or Ubuntu, you can install everything required using the following commands:
+На Debian/Ubuntu всё необходимое можно установить при помощи соедующих команд:
 
 ```
 $ sudo apt-get update
@@ -36,166 +36,97 @@ $ sudo apt-get install -y build-essential cmake git python3-pip
 $ sudo apt-get install libgtk2.0-dev libasound2-dev libavformat-dev libjack-jackd2-dev uuid-dev
 ```
 
-## Building on Windows
+## Сборка на Windows
 
-1. Clone Sneedacity from the Sneedacity GitHub project. 
+1. Склонируйте Sneedacity из проекта Sneedacity на GitHub. 
   
-   For example, in the **git-bash** run:
+   Например, в **git-bash** это будет выглядеть так:
 
     ```
     $ git clone https://github.com/formerlychuck/sneedacity/
     ```
 
-2. Open CMake GUI. 
+2. Откройте CMake GUI. 
    
-   Set the **Where is the source code** to the location where Sneedacity was cloned. 
+   Установите **Where is the source code** как директорию, в которую склонировали Sneedacity. 
    
-   Set **Where to build the binaries** to the location you want to place your build in. It is preferred that this location is not within the directory with the source code.
+   Установите **Where to build the binaries** как директорию, в которую хотите сохранить файлы сборки. Желательно, чтобы это не была та же директория, в которой хранятся исходные файлы.
 
-3. Press **Configure**. You can choose which version of Visual Studio to use and the platform to build for in the pop-up. We support **x64** and **Win32** platforms. The **x64** platform is a default option. Press **Finish** to start the configuration process.
+3. Нажмите **Configure**. Во всплывающем окне вы можете выбрать версию Visual Studio и платформу для сборки. Мы поддерживаем платформы **x64** и **Win32**. Платформа **x64** выбрана по умолчанию. Нажмите **Finish**, чтобы начать процесс настройки.
 
-4. After successful configuration, you will see `Configuring done` in the last line of the log. Press **Generate** to generate the Visual Studio project. 
+4. После успешной настройки вы увидите `Configuring done` в последней строке журнала. Нажмите **Generate**, чтобы сгенерировать проект Visual Studio. 
 
-5. After you see "Generating done", press **Open Project** to open the project in Visual Studio.
-   
-6. Select "Build -> Build Solution".
-   
-7. You can now run and debug Sneedacity!
+5. После появления надписи «Generating done» нажмите **Open Project**, чтобы открыть проект в Visual Studio.
+
+6. Выберите «Build -> Build Solution».
+
+7. Теперь вы можете запускать и отлаживать Sneedacity!
       
-Generally, steps 1-5 are only needed the first-time you configure. Then, after you've generated the solution, you can open it in Visual Studio next time. If the project configuration has changed, the IDE will invoke CMake internally. 
+Как правило, шаги 1-5 нужны только при первой настройке. Затем, сгенерировав решение, вы можете открыть его в Visual Studio в следующий раз. Если конфигурация проекта изменилась, IDE вызовет CMake изнутри. 
 
 ## macOS
 
-1. Clone Sneedacity from the Sneedacity GitHub project. 
+1. Склонируйте Sneedacity из проекта Sneedacity на GitHub. 
   
     ```
     $ git clone https://github.com/formerlychuck/sneedacity/
     ```
 
-2. Configure Sneedacity using CMake:
+2. Настройте Sneedacity, используя CMake:
    ```
    $ mkdir build && cd build
    $ cmake -GXcode -T buildsystem=1 ../sneedacity
    ```
 
-3. Open Sneedacity XCode project:
+3. Откройте проект Sneedacity в XCode:
    ```
    $ open Sneedacity.xcodeproj
    ```
-   and build Sneedacity using the IDE. 
+   и соберите Sneedacity, используя IDE. 
 
-Steps 1 and 2 are only required for first-time builds. 
+Шаги 1 и 2 требуются только для первых сборок. 
 
-Alternatively, you can use **CLion**. If you chose to do so, open the directory where you have cloned Sneedacity using CLion and you are good to go.
+В качестве альтернативы вы можете использовать **CLion**. Если вы решили сделать это, откройте каталог, в который вы клонировали Sneedacity с помощью CLion, и все готово.
 
-At the moment we only support **x86_64** builds. It is possible to build using AppleSilicon hardware but **mad** and **id3tag** should be disabled:
+На данный момент мы поддерживаем только сборки **x86_64**. Можно собирать на аппаратном обеспечении AppleSilicon, но **mad** и **id3tag** должны быть отключены.:
 
 ```
 cmake -GXCode -T buildsystem=1 -Dsneedacity_use_mad="off" -Dsneedacity_use_id3tag=off ../sneedacity
 ```
 
-## Linux & Other OS
+## Linux и другие ОС
 
-Note: only Debian and Ubuntu are officially supported.
+Примечание: официально поддерживаются только Debian и Ubuntu.
 
-1. Clone Sneedacity from the Sneedacity GitHub project. 
+1. Склонируйте Sneedacity из проекта Sneedacity на GitHub. 
   
     ```
     $ git clone https://github.com/Sneeds-Feed-and-Seed/sneedacity/
     ```
 
-2. Configure Sneedacity using CMake:
+2. Настройте Sneedacity, используя CMake:
    ```
    $ mkdir build && cd build
    $ cmake -G "Unix Makefiles" -Dsneedacity_use_ffmpeg=loaded ../sneedacity
    ```
-   By default, Debug build will be configured. To change that, pass `-DCMAKE_BUILD_TYPE=Release` to CMake.
+   По умолчанию будет настроена сборка Debug. Чтобы изменить это, передайте в CMake команду `-DCMAKE_BUILD_TYPE=Release.
 
-3. Build Sneedacity:
+3. Соберите Sneedacity:
    ```
    $ make -j`nproc`
    ```
 
-4. Testing the build:
-   Adding a "Portable Settings" folder allows Sneedacity to ignore the settings of any existing Sneedacity installation.
+4. Тестирование сборки:
+Добавление папки «Portable Settings» позволяет Sneedacity игнорировать настройки любой существующей установки Sneedacity.
    ```
    $ cd bin/Debug
    $ mkdir "Portable Settings"
    $ ./sneedacity
    ```
 
-5. Installing Sneedacity
+5. Установите Sneedacity
    ```
    $ cd <build directory>
    $ sudo make install
    ```
 
-## Advanced
-
-### CMake options
-
-You can use `cmake -LH` to get a list of the options available (or use CMake GUI or `ccmake`). The list will include documentation about each option. For convenience, [here is a list](CMAKE_OPTIONS.md) of the most notable options.
-
-### Building using system libraries
-
-On Linux it is possible to build Sneedacity using (almost) only the libraries provided by the package manager. Please, see the list of required libraries [here](linux/required_libraries.md).
-
-```
-$ mkdir build && cd build
-$ cmake -G "Unix Makefiles" \
-        -Dsneedacity_use_ffmpeg=loaded \
-        -Dsneedacity_lib_preference=system \
-        -Dsneedacity_obey_system_dependencies=On \
-         ../sneedacity
-```
-
-There are a few cases when the local library build is preferred:
-
-1. **wxWidgets**: While Sneedacity on **Linux** uses vanilla version of wxWidgets, we **require** that version **3.1.3** is used. This version is not available in most of the distributions.
-2. **portaudio-v19**: Sneedacity currently uses [some private APIs](https://github.com/sneedacity/sneedacity/issues/871), so using system portaudio is not yet possible.
-3. **vamp-host-sdk**: Development packages are not available in Ubuntu 20.04.
-4. **libnyquist** & **portmixer**: Libraries are not available in Ubuntu 20.04.
-5. **sqlite3** & **libsmbs**: Libraries are very outdated in Ubuntu 20.04.
-
-It is not advised to mix system and local libraries, except for the list above. `ZLib` is a very common dependency; it is possible to mix system and local libraries in one build. However, we advise against doing so.
-
-There is a [`Dockerfile`](linux/build-environment/Dockerfile) that can be used as an example of how to build Sneedacity using system libraries: 
-
-```
-$ docker build -t sneedacity_linux_env .\linux\build-environment\
-$ docker run --rm -v ${pwd}:/sneedacity/sneedacity/ -v ${pwd}/../build/linux-system:/sneedacity/build -it sneedacity_linux_env
-```
-
-To find system packages, we rely on `pkg-config`. There are several packages that have broken `*.pc` or do not use `pkg-config` at all. For the docker image - we handle this issue by installing the correct [`pc` files](linux/build-environment/pkgconfig/).
-
-### Alternative build method on Linux (experimental)
-
-This is an alternative build method meant to, in the future, unify the build process on all the supported platforms and the CI/CD pipeline on Github. At the moment though, it only works/was tested on Linux, and might cause a bug that prevents Sneedacity from detecting audio devices, so more testing is needed before this becomes the official method of building.
-
-How to build:
-
-```
-#Install the required packages
-apt-get install libxss-dev libxxf86vm-dev libxkbfile-dev libxv-dev pkg-config libgtk2.0-dev libgtk2.0-dev libasound2-dev libavformat-dev libjack-jackd2-dev uuid-dev build-essential cmake git python3-pip
-#Note that you might need to remove the cmake package and install it from the cmake webpage because the build process requires a quite recent version.
-cd ~
-git clone https://github.com/Sneeds-Feed-and-Seed/sneedacity
-mkdir sneedacity_build
-mkdir sneedacity_install
-cd sneedacity_build
-~/sneedacity/scripts/build/configure.sh ~/sneedacity_install
-~/sneedacity/scripts/build/build.sh
-~/sneedacity/scripts/build/install.sh
-```
-
-How to debug the build process:
-
-Add
-
-```
-> out.txt 2>&1
-```
-
-to the end of the failing command.
-
-Then grep the out.txt file for "CMake Error" or "error:".
